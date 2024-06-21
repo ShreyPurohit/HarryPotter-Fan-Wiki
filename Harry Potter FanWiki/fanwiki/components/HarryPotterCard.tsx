@@ -9,18 +9,19 @@ export interface ICard {
 
 const HarryPotterCard = ({ character }: { character: ICard }) => {
     return (
-        <div className="flex flex-col md:min-w-80 min-w-72 rounded shadow-lg bg-stone-200 hover:bg-stone-300 text-black m-2 border border-black">
-            <div className="relative h-56 self-center">
+        <div id='hpCard' className="flex flex-col md:min-w-80 min-w-72 rounded shadow-lg text-black m-2 border border-black">
+            <div className="flex flex-col">
                 <Image
                     src={DummyImg}
                     alt={character.name}
-                    className="rounded-t mt-3"
+                    sizes='100vw'
+                    className="w-full h-auto"
                 />
             </div>
             <h2 className="md:p-4 p-2 xl:pb-2 text-center tracking-wider">
                 {character.name}
             </h2>
-            <LikeDetailButtons _id={character._id} />
+                <LikeDetailButtons _id={character._id} />
         </div>
     );
 };

@@ -7,12 +7,12 @@ export interface ICharacters {
     species: string,
     gender: string,
     house: string,
-    dateOfBirth: Date,
+    dateOfBirth: string,
     yearOfBirth: number,
     wizard: boolean,
     ancestry: string,
     eyeColour: string,
-    hairColor: string,
+    hairColour: string,
     wand: {
         wood: string,
         core: string,
@@ -43,7 +43,7 @@ const CharacterModelSchema = new Schema<ICharacters>({
         type: Schema.Types.String
     },
     dateOfBirth: {
-        type: Schema.Types.Date
+        type: Schema.Types.String
     },
     yearOfBirth: {
         type: Schema.Types.Number
@@ -57,7 +57,7 @@ const CharacterModelSchema = new Schema<ICharacters>({
     eyeColour: {
         type: Schema.Types.String
     },
-    hairColor: {
+    hairColour: {
         type: Schema.Types.String
     },
     wand: {

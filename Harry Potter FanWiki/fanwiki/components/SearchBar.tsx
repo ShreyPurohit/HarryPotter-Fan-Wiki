@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { getCharacterCard, getCharacterNames } from "@/session-management/actions"
+import { getCharacterNames } from "@/session-management/actions"
 import Link from "next/link"
 
 interface ICharacterName {
@@ -37,7 +37,7 @@ const SearchBar = () => {
                 <input
                     list="characters"
                     name="searchbarname"
-                    className="rounded-l px-2 md:px-4 placeholder:text-lg py-2 border-t border-b border-l border-black outline-none"
+                    className="rounded-l w-3/5 px-2 md:w-2/4 lg:w-1/4 md:px-4 placeholder:text-lg py-2 border-t border-b border-l border-black outline-none"
                     placeholder="Search Your Favorite Character"
                     value={name}
                     onChange={(e) => setName(e.target.value)}

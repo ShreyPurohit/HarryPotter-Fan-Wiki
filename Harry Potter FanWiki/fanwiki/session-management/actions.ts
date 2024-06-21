@@ -113,7 +113,6 @@ export const getCharacterCard = async (formData: FormData) => {
 
 export const addToFavouriates = async (_id: string) => {
     const session = await getSession()
-
     const reqBody = {
         _id,
         user_id: session.user_id
@@ -124,8 +123,6 @@ export const addToFavouriates = async (_id: string) => {
             throw new Error('Failed to fetch character');
         }
         const data = await result.json();
-        console.log("data", data);
-
         return data;
     } catch (error) {
         console.error(error);
@@ -139,9 +136,22 @@ export const viewDetails = async (_id: string) => {
             throw new Error('Failed to fetch character');
         }
         const data = await result.json();
-        console.log("data", data);
         return data;
     } catch (error) {
         console.error(error);
     }
 }
+
+export const myFavouriates = async() => {
+    const session = await getSession()
+    try {
+        const result = await fetch(`http://localhost:3000/api/characters/myfavs/${session.user_id?.toString()}`)
+        if (!result.ok) {
+            throw new Error('Failed to fetch favs');
+        }
+        const data = await result.json();
+        return data;     
+    } catch (error) {
+        console.error(error);
+    }
+} 

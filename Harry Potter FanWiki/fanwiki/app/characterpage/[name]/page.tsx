@@ -1,4 +1,6 @@
-import HarryPotterCard, { ICard } from "@/components/HarryPotterCard"
+import dynamic from "next/dynamic"
+import { ICard } from "@/components/HarryPotterCard"
+const HarryPotterCard = dynamic(() => import('@/components/HarryPotterCard'))
 
 const CharacterPage = ({ params }: { params: ICard }) => {
     const name = params.name.replace("%20", " ")

@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={aladin.className}>
-      <body className=" text-xl md:h-fit">
+      <body className="text-xl md:h-fit">
         <NavBarComponent />
         <Suspense fallback={<Loader />} >
           <main className="">

@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const { Schema, model } = mongoose
 
 
-const CharacterModelSchema = new Schema ({
+const CharacterModelSchema = new Schema({
     name: {
         type: Schema.Types.String
     },

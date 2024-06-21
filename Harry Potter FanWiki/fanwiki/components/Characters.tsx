@@ -1,9 +1,12 @@
 "use client"
+import dynamic from 'next/dynamic';
 
 import { useEffect, useState } from 'react';
-import HarryPotterCard from './HarryPotterCard';
+// import HarryPotterCard from './HarryPotterCard';
+const HarryPotterCard = dynamic(() => import('./HarryPotterCard'))
 import { ICharacters } from '@/models/charactersModel';
-import Loader from './Loader';
+// import Loader from './Loader';
+const Loader = dynamic(() => import('./Loader'))
 import { getCharacters } from '@/session-management/actions';
 
 const CharacterComponent = () => {
@@ -35,11 +38,13 @@ const CharacterComponent = () => {
     }
 
     return (
-        <div className="flex flex-wrap justify-center">
-            {charactersList.map((character) => (
-                <HarryPotterCard key={character.actor} character={character} />
-            ))}
-            <div className="flex justify-end">
+        <div>
+            <div className='flex flex-wrap justify-center'>
+                {charactersList.map((character) => (
+                    <HarryPotterCard key={character.actor} character={character} />
+                ))}
+            </div>
+            <div className="flex justify-center mb-10 xl:mb-0">
                 <button
                     onClick={handlePreviousPage}
                     disabled={currentPage === 1}
