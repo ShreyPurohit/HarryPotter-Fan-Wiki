@@ -1,12 +1,10 @@
 "use client"
 import dynamic from 'next/dynamic';
-
-import { useEffect, useState } from 'react';
-// import HarryPotterCard from './HarryPotterCard';
 const HarryPotterCard = dynamic(() => import('./HarryPotterCard'))
-import { ICharacters } from '@/models/charactersModel';
-// import Loader from './Loader';
 const Loader = dynamic(() => import('./Loader'))
+import { useEffect, useState } from 'react';
+
+import { ICharacters } from '@/models/charactersModel';
 import { getCharacters } from '@/session-management/actions';
 
 const CharacterComponent = () => {

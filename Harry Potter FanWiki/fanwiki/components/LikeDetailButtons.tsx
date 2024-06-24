@@ -1,3 +1,4 @@
+"use client"
 import { addToFavouriates } from '@/session-management/actions'
 import Link from 'next/link'
 import { FaHeart } from 'react-icons/fa'

@@ -1,12 +1,11 @@
 "use client"
 import dynamic from "next/dynamic";
-// import DetailCard from "@/components/DetailCard";
 const DetailCard = dynamic(() => import('@/components/DetailCard'))
-// import Loader from "@/components/Loader";
 const Loader = dynamic(() => import('@/components/Loader'))
+import { useEffect, useState } from "react";
+
 import { ICharacters } from "@/models/charactersModel";
 import { viewDetails } from "@/session-management/actions";
-import { useEffect, useState } from "react";
 
 const CharacterDetail = ({ params }: { params: { id: string } }) => {
     const { id } = params

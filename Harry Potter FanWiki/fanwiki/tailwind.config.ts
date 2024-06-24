@@ -7,9 +7,6 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    debugScreens: {
-      position: ["top", "left"]
-    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -18,8 +15,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require('tailwindcss-debug-screens')
-  ],
+  plugins: [],
 };
 export default config;

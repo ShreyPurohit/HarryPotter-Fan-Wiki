@@ -2,7 +2,6 @@ import { ICharacters } from "@/models/charactersModel";
 import Image from "next/image";
 import DummyImg from '../images/DummyImg.jpeg'
 
-
 interface CharacterCardProps {
     character: ICharacters;
 }

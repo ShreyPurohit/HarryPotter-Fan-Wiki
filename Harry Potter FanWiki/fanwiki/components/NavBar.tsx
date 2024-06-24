@@ -16,7 +16,6 @@ const NavBarComponent = async () => {
                     ? <LogoutForm />
                     : <Link href={'/users'} className={navstyles}>Login/Signup</Link>
                 }
-                {session.role === "Admin" ? <Link href={'/characterpage/addcharacter'} className={navstyles}>Add Character</Link> : <></>}
             </div>
         </nav>
     )

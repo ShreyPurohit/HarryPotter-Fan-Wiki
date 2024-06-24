@@ -5,6 +5,7 @@ import FooterComponent from "@/components/Footer";
 import { Aladin } from '@next/font/google'
 import { Suspense } from "react";
 import Loader from "@/components/Loader";
+import ScrollToTopButton from "@/components/ScrollToTop";
 
 const aladin = Aladin({ subsets: ["latin"], weight: ["400"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
           <main className="">
             {children}
             </main>
+            <ScrollToTopButton />
         </Suspense>
         <FooterComponent />
       </body>
