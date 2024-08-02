@@ -7,8 +7,8 @@ const MyFavsComponent = ({ data }: { data: { characterArr: ICard[] } }) => {
     const { characterArr } = data
 
     return (
-        <div className="flex flex-col w-max m-auto flex-wrap md:flex-row">
-            {characterArr.map((character) => (
+        <div className="flex flex-wrap justify-center pb-7">
+            {characterArr?.map((character) => (
                 <HarryPotterCard character={character} key={character._id} />
             ))}
         </div>

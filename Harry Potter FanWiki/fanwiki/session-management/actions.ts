@@ -142,15 +142,15 @@ export const viewDetails = async (_id: string) => {
     }
 }
 
-export const myFavouriates = async() => {
+export const myFavouriates = async () => {
     const session = await getSession()
     try {
-        const result = await fetch(`http://localhost:3000/api/characters/myfavs/${session.user_id?.toString()}`)
+        const result = await fetch(`http://localhost:3000/api/characters/myfavs/${session.user_id?.toString()}`, { cache: 'reload' })
         if (!result.ok) {
             throw new Error('Failed to fetch favs');
         }
         const data = await result.json();
-        return data;     
+        return data;
     } catch (error) {
         console.error(error);
     }

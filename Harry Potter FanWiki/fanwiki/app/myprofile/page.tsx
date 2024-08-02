@@ -9,7 +9,7 @@ const MyProfilePage = async () => {
     }
     const data = await myFavouriates()
     return (
-        <section className="mt-28">
+        <section className="mt-28 md:mt-20">
             <h1 className="text-center">Welcome {session.wizard_name}</h1>
             <div className="p-5 md:p-1">
                 <h2 className="text-center">My Favouriates</h2>

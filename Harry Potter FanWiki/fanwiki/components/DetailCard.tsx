@@ -19,7 +19,7 @@ const DetailCard: React.FC<CharacterCardProps> = ({ character }) => {
                     <h2 className="text-stone-700 text-4xl xl:text-5xl">Character Details</h2>
                     <p className="xl:text-3xl">House: <span className="text-stone-600 text-xl xl:text-2xl">{character.house}</span></p>
                     <p className="xl:text-3xl">Wizard: <span className="text-stone-600 text-xl xl:text-2xl">{character.wizard ? "Yes" : "No"}</span></p>
-                    <p className="xl:text-3xl">Alternate Names:
+                    <div className="xl:text-3xl">Alternate Names:
                         <span className="text-stone-600 text-xl">
                             <ul className="ml-5">
                                 {character.alternate_names.length > 0 ? character.alternate_names.map((name) => (
@@ -27,12 +27,12 @@ const DetailCard: React.FC<CharacterCardProps> = ({ character }) => {
                                 )) : "No Alternate"}
                             </ul>
                         </span>
-                    </p>
+                    </div>
                     <p className="xl:text-3xl">Ancestry: <span className="text-stone-600 text-xl  xl:text-2xl">{character.ancestry}</span></p>
                     <p className="xl:text-3xl">Hogwarts Staff: <span className="text-stone-600 text-xl xl:text-2xl">{character.hogwartsStaff ? "Yes" : "No"}</span></p>
                     <p className="xl:text-3xl">Hogwarts Student: <span className="text-stone-600 text-xl xl:text-2xl">{character.hogwartsStudent ? "Yes" : "No"}</span></p>
                     <p className="xl:text-3xl">Species: <span className="text-stone-600 text-xl">{character.species}</span></p>
-                    <p className="xl:text-3xl">Wand:
+                    <div className="xl:text-3xl">Wand:
                         <span className="text-stone-600 text-xl xl:text-2xl">
                             <ul className="ml-5">
                                 <li>Wood: {character.wand.core}</li>
@@ -40,7 +40,7 @@ const DetailCard: React.FC<CharacterCardProps> = ({ character }) => {
                                 <li>Length: {character.wand.length} inches</li>
                             </ul>
                         </span>
-                    </p>
+                    </div>
                     <p className="xl:text-3xl">Patronus: <span className="text-stone-600 text-xl">{character.patronus}</span></p>
                 </div>
                 <div className="mt-1 xl:mt-0">
