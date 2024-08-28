@@ -19,11 +19,11 @@ export async function GET(req: NextRequest, { params }: { params: { user_id: str
         }
 
         const characterArr: ICard[] = []
-        for (let i = 0; i < UserFavs.favs.length; i++) {
-            const FavCharacters = await CharacterModel.findById(UserFavs.favs[i].toString()).select("name image")
-            characterArr.push(FavCharacters)
+        for (const favId of UserFavs.favs) {
+            const FavCharacters = await CharacterModel.findById(favId.toString()).select('name image');
+            characterArr.push(FavCharacters);
         }
-        
+
         return NextResponse.json({
             characterArr
         }, { status: 200 })
