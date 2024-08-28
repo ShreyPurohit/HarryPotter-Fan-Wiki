@@ -145,7 +145,7 @@ export const viewDetails = async (_id: string) => {
 export const myFavouriates = async () => {
     const session = await getSession()
     try {
-        const result = await fetch(`http://localhost:3000/api/characters/myfavs/${session.user_id?.toString()}`, { cache: 'reload' })
+        const result = await fetch(`http://localhost:3000/api/characters/myfavs/${session.user_id?.toString()}`)
         if (!result.ok) {
             throw new Error('Failed to fetch favs');
         }
